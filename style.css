@@ -47,7 +47,7 @@ border-bottom-right-radius: 20px;
     --yellow: #ffea00; /* желтый */
     --white: #ffffff;
     --black: #000000;
-    --grad-primary: linear-gradient(90deg, #ffe259 0%, #0bb55b 100%); /* пример градиента желтого в зеленый */
+    --grad-primary: linear-gradient(90deg, #fff200 0%, #00ec8e 100%); /* пример градиента желтого в зеленый */
 }
 body {
     margin: 0;
@@ -59,16 +59,59 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--grad-primary);
+    background:  background: white;/*var(--grad-primary);*/
     padding: 10px 20px;
     border-radius: 10px 10px 0 0;
 }
+
+.side {
+    width: 150px; /* ширина боковых плашек */
+    height: 60px;
+    background: linear-gradient(90deg, #fff200, #00ec8e);
+}
+
+.left {
+    width: 10%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #fff200;
+}
+.center-header{
+    display: flex;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.right {
+    width: 10%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: #00ec8e;
+}
+
+.logo {
+    flex-shrink: 0;
+    background: white;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.logo img {
+    height: 60px;
+    display: block;
+}
+
 /* Логотип ZENchain */
 header .logo {
     font-size: 1.5em;
     font-weight: bold;
     color: var(--black);
+
 }
+
 header .logo .chain {
     font-size: 0.8em; /* 'chain' чуть меньше */
 }
@@ -81,9 +124,12 @@ header .user-id {
     background: rgba(255,255,255,0.3);
     padding: 5px 10px;
     border-radius: 5px;
+    margin-left: auto;
     margin-right: 10px;
     color: var(--white);
     font-size: 27px;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 header .login-btn {
     background: linear-gradient(90deg, #2ecc71 0%, #27ae60 100%);
@@ -93,6 +139,7 @@ header .login-btn {
     color: var(--white);
     font-size: 38px/*1em*/;
     cursor: pointer;
+    margin: 0 20px;
 }
 header .login-btn:hover {
     opacity: 0.9;
@@ -100,6 +147,7 @@ header .login-btn:hover {
 
 /* Основной контейнер */
 .wrapper {
+
     display: flex;
     flex-direction: column; /* по умолчанию вертикально */
     align-items: center;
@@ -109,9 +157,11 @@ header .login-btn:hover {
 /* Блок центра: уровень, прогресс, динозавр */
 .center {
     text-align: center;
-    margin: 20px;
+    margin: 0;
 }
 .level-title {
+    position: relative;
+    z-index: 2;
     position: relative;
     display: inline-block;
     background: linear-gradient(90deg, #abe43a 0%, #3bb78f 100%);
@@ -140,10 +190,12 @@ header .login-btn:hover {
     border-left: 20px solid #3bb78f;
 }
 .progress {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 .progress .star {
     display: inline-block;
@@ -169,10 +221,16 @@ header .login-btn:hover {
     height: 100%;
 }
 /* Изображение динозавра */
+
 .dino-img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+
+    transform: translate(10%, -10%);
+    width: 80%;          /* ширина займет всю ширину родителя */
+    max-width: 80%;     /* максимальная ширина, можно менять */
+    aspect-ratio: 2 / 3;  /* пропорции 2:3 */
+    object-fit: cover;    /* кадрирование */
+    object-position: center; /* фокус по центру */
+    display: block;
 }
 
 /* Блок с информацией: DINOSFOOD, клейм, таймер */
@@ -191,7 +249,7 @@ header .login-btn:hover {
     position: absolute;
     inset: 0;
     padding: 3px; /* толщина рамки */
-    background: linear-gradient(180deg, #abe43a 0%, #f9ff00 100%);
+    background: linear-gradient(90deg, #fff200 0%, #00ec8e 100%);
     mask:
             linear-gradient(#fff 0 0) content-box,
             linear-gradient(#fff 0 0);
@@ -242,13 +300,14 @@ header .login-btn:hover {
     margin-top: 20px;
     border-radius: 10px;
     overflow: hidden;
+
 }
 .rules::before {
     content: '';
     position: absolute;
     inset: 0;
     padding: 3px; /* толщина рамки */
-    background: linear-gradient(180deg, #abe43a 0%, #f9ff00 100%);
+    background: linear-gradient(90deg, #fff200 0%, #00ec8e 100%);
     mask:
             linear-gradient(#fff 0 0) content-box,
             linear-gradient(#fff 0 0);
@@ -367,13 +426,15 @@ header .login-btn:hover {
 /* Адаптив для горизонтального экрана */
 @media (min-width: 1080px) {
     .wrapper {
+        max-height: calc(100vh - 120px);
+
         flex-direction: row;
         justify-content: space-around;
         align-items: flex-start;
         align-items: stretch;
     }
     .center, .info, .rules {
-        margin: 10px;
+        margin: 0px;
     }
     .rules {
         order: 0;
