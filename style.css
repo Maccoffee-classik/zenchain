@@ -51,7 +51,8 @@ border-bottom-right-radius: 20px;
 }
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
+
     background: var(--white);
     color: var(--black);
 }
@@ -149,15 +150,21 @@ header .login-btn:hover {
 .wrapper {
 
     display: flex;
-    flex-direction: column; /* по умолчанию вертикально */
+
     align-items: center;
     padding: 20px;
+    flex-wrap: wrap;
+    flex-direction: unset;
 }
 
 /* Блок центра: уровень, прогресс, динозавр */
 .center {
+    width: 50%;
     text-align: center;
     margin: 0;
+}
+.info-wrapper {
+    width: 50%;
 }
 .level-title {
     position: relative;
@@ -235,13 +242,16 @@ header .login-btn:hover {
 
 /* Блок с информацией: DINOSFOOD, клейм, таймер */
 .info {
+    height: 100%;
     position: relative;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 30px;
     text-align: center;
     margin: 20px;
-    overflow: hidden;
-    border-radius: 10px;
+
+}
+.info-height-auto {
+    height: auto;
 }
 
 .info::before {
@@ -267,28 +277,81 @@ header .login-btn:hover {
 .dinosfood-label {
     font-size: 55px/*1.2em*/;
     color: #61d403;
-    margin-bottom: 10px;
+    font-weight: 700;
+
+
+    margin-bottom: 30px;
+    margin-top: 0px;
+}
+
+/*КНОПКА КЛЕЙМ*/
+.button-wrapper {
+    width: 50%;
+    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+
+    margin-bottom: -89px;
+
+    width: calc(100% - 40px);
+    display: inline-block;
+    padding: 20px;
+    background: linear-gradient(to bottom, #009f00 0%, #00d600 100%); /* внешний фон */
+    border-radius: 999px;
 }
 .claim-btn {
+    width: 100%;
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: linear-gradient(90deg, #2ecc71 0%, #27ae60 100%);
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-size: 38px/*1em*/;
+    padding: 0px 0px;
+    background: linear-gradient(to bottom, #009f00, #00d600);
+    border: 2px solid white; /* Внутренняя рамка */
+    border-radius: 999px;
+    z-index: 1;
+    font-size: 55px;
+    font-weight: 700;
+    text-transform: uppercase;
     cursor: pointer;
-    margin-bottom: 10px;
+    overflow: hidden;
+
 }
+
 .claim-btn .icon {
-    margin-right: 5px;
+    margin-left: -5px;
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
 }
+
+.claim-btn .icon img {
+    width: 70x;
+    height: 70px;
+}
+
+.claim-btn .text {
+    margin: auto;
+    padding: 0;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+/*КНОПКА КЛЕЙМ*/
+
 .timer {
     font-size: 55px/*1.5em*/;
-    font-weight: bold;
+    font-weight: 700;
     color: #61d403;
+    padding-top: 94px;
+    padding-bottom: 18px;
 }
 
 /* Блок правил */
@@ -298,7 +361,7 @@ header .login-btn:hover {
     width: 90%;
     padding: 20px;
     margin-top: 20px;
-    border-radius: 10px;
+    border-radius: 30px;
     overflow: hidden;
 
 }
@@ -322,6 +385,7 @@ header .login-btn:hover {
     margin: 0 0 10px 0;
     color: #61d403;
     text-align: center;
+    font-weight: 700;
 }
 
 
@@ -401,23 +465,7 @@ header .login-btn:hover {
     margin-left: 15px;
 }
 /* Кнопка "КЛЕЙМ" */
-.claim-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to right, #66C500, #A3E635); /* Зеленый градиент */
-    color: white;
-    font-size: 38px/*1em*/;
-    font-weight: bold;
-    border: none;
-    border-radius: 38px;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-.claim-btn .chicken-icon {
-    margin-right: 10px;
-    font-size: 20px;
-}
+
 
 
 
@@ -432,21 +480,26 @@ header .login-btn:hover {
         justify-content: space-around;
         align-items: flex-start;
         align-items: stretch;
+        flex-wrap: nowrap;
     }
     .center, .info, .rules {
         margin: 0px;
     }
     .rules {
         order: 0;
-        width: 25%;
+        width: 30%;
     }
     .center {
         order: 1;
         width: 40%;
     }
-    .info {
+    .info-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
         order: 2;
-        width: 25%;
+        width: 30%;
+        min-height: 100%;
     }
 
 
