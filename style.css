@@ -1,0 +1,408 @@
+/*    .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            background: #e6e9f0;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon::before {
+            content: '★';
+            color: #3cd142;
+            font-size: 24px;
+        }
+
+        .progress-bar {
+            position: relative;
+            width: 300px;
+            height: 30px;
+            background: #ccc;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 80%; /* можно менять для прогресса */
+/*height: 100%;
+background: linear-gradient(90deg, #00ff99, #ffff00);
+box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+}*/
+
+
+:root {
+    /* Цвета и переменные */
+    --green-light: #8af900; /* светло-зелёный */
+    --green: #45b649; /* основной зелёный */
+    --yellow: #ffea00; /* желтый */
+    --white: #ffffff;
+    --black: #000000;
+    --grad-primary: linear-gradient(90deg, #ffe259 0%, #0bb55b 100%); /* пример градиента желтого в зеленый */
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--white);
+    color: var(--black);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--grad-primary);
+    padding: 10px 20px;
+    border-radius: 10px 10px 0 0;
+}
+/* Логотип ZENchain */
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--black);
+}
+header .logo .chain {
+    font-size: 0.8em; /* 'chain' чуть меньше */
+}
+/* Блок справа с ID и кнопкой входа */
+header .user-area {
+    display: flex;
+    align-items: center;
+}
+header .user-id {
+    background: rgba(255,255,255,0.3);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: var(--white);
+    font-size: 27px;
+}
+header .login-btn {
+    background: linear-gradient(90deg, #2ecc71 0%, #27ae60 100%);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 38px;
+    color: var(--white);
+    font-size: 38px/*1em*/;
+    cursor: pointer;
+}
+header .login-btn:hover {
+    opacity: 0.9;
+}
+
+/* Основной контейнер */
+.wrapper {
+    display: flex;
+    flex-direction: column; /* по умолчанию вертикально */
+    align-items: center;
+    padding: 20px;
+}
+
+/* Блок центра: уровень, прогресс, динозавр */
+.center {
+    text-align: center;
+    margin: 20px;
+}
+.level-title {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(90deg, #abe43a 0%, #3bb78f 100%);
+    color: white;
+    font-size: 38px/*1.5em*/;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+.level-title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    border-top: 32px solid transparent;
+    border-bottom: 32px solid transparent;
+    border-right: 20px solid #abe43a;
+}
+.level-title::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -20px;
+    border-top: 32px solid transparent;
+    border-bottom: 32px solid transparent;
+    border-left: 20px solid #3bb78f;
+}
+.progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.progress .star {
+    display: inline-block;
+    background: #ddd;
+    color: #abe43a;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+.progress-bar {
+    background: #eee;
+    width: 200px;
+    height: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.progress-fill {
+    background: linear-gradient(90deg, #abe43a 0%, #3bb78f 100%);
+    width: 70%; /* пример заполнения */
+    height: 100%;
+}
+/* Изображение динозавра */
+.dino-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Блок с информацией: DINOSFOOD, клейм, таймер */
+.info {
+    position: relative;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.info::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 3px; /* толщина рамки */
+    background: linear-gradient(180deg, #abe43a 0%, #f9ff00 100%);
+    mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+
+.dinosfood-count {
+    font-size: 219px;
+    color: #61d403;
+    font-weight: bold;
+}
+.dinosfood-label {
+    font-size: 55px/*1.2em*/;
+    color: #61d403;
+    margin-bottom: 10px;
+}
+.claim-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #2ecc71 0%, #27ae60 100%);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 38px/*1em*/;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.claim-btn .icon {
+    margin-right: 5px;
+}
+.timer {
+    font-size: 55px/*1.5em*/;
+    font-weight: bold;
+    color: #61d403;
+}
+
+/* Блок правил */
+.rules {
+    position: relative;
+
+    width: 90%;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.rules::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 3px; /* толщина рамки */
+    background: linear-gradient(180deg, #abe43a 0%, #f9ff00 100%);
+    mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+
+.rules h2 {
+    font-size: 55px;
+    margin: 0 0 10px 0;
+    color: #61d403;
+    text-align: center;
+}
+
+
+/*МОДАЛКА*/
+
+/* Стиль изображения динозавра (используем emoji как placeholder) */
+#dino {
+    cursor: pointer;
+    font-size: 100px;
+    user-select: none;
+}
+/* Скрытое по умолчанию модальное окно */
+#modal {
+    display: none; /* Скрываем изначально */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрируем окно */
+    width: 80%;
+    max-width: 400px;
+    background: white;
+    border: 3px solid;
+    border-radius: 10px;
+    /* Градиентная рамка (желтый в левом углу, зеленый в правом) */
+    border-image: linear-gradient(45deg, #FFFF00, #00FF00) 1;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+/* Заголовок модального окна */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.modal-header span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #66C500; /* Зеленый цвет заголовка */
+}
+/* Зеленая "таблетка" с числом */
+.pill {
+    background: #66C500;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+/* Тело модального окна: стрелки и большая цифра */
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.large-number {
+    font-size: 64px;
+    font-weight: bold;
+    color: #66C500; /* Зеленый цвет числа */
+    margin: 0 15px;
+}
+/* Стрелка вниз (красная) */
+.arrow.down {
+    width: 30px;
+    height: 30px;
+    background: #FF7678; /* Розово-красный */
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    margin-right: 15px;
+}
+/* Стрелка вверх (желто-зеленая градиентная) */
+.arrow.up {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to bottom, #FFEB3B, #4CAF50);
+    clip-path: polygon(50% 0, 100% 100%, 0% 100%);
+    margin-left: 15px;
+}
+/* Кнопка "КЛЕЙМ" */
+.claim-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #66C500, #A3E635); /* Зеленый градиент */
+    color: white;
+    font-size: 38px/*1em*/;
+    font-weight: bold;
+    border: none;
+    border-radius: 38px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.claim-btn .chicken-icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+
+
+
+
+/* Адаптив для горизонтального экрана */
+@media (min-width: 1080px) {
+    .wrapper {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        align-items: stretch;
+    }
+    .center, .info, .rules {
+        margin: 10px;
+    }
+    .rules {
+        order: 0;
+        width: 25%;
+    }
+    .center {
+        order: 1;
+        width: 40%;
+    }
+    .info {
+        order: 2;
+        width: 25%;
+    }
+
+
+
+
+
+}
+/*МОДАЛКА*/
+@media (max-width: 1080px) {
+    #modal {
+        width: 90%;
+        padding: 15px;
+    }
+    .large-number {
+        font-size: 48px;
+    }
+    .modal-header span, .pill, .claim-btn {
+        font-size: 16px;
+    }
+}

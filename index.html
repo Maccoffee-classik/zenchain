@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ZenChain Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Логотип ZenChain -->
+    <div class="logo"><span class="zen">ZEN</span><span class="chain">chain</span></div>
+    <div class="user-area">
+        <!-- ID пользователя -->
+        <span class="user-id">[11258****]</span>
+        <!-- Кнопка "ВОЙТИ" -->
+        <button class="login-btn">+ ВОЙТИ</button>
+    </div>
+</header>
+
+<div class="wrapper">
+    <!-- Центр: уровень, прогресс, динозавр -->
+    <div class="center">
+        <div class="level-title">УРОВЕНЬ 1</div>
+        <div class="progress">
+            <span class="star">★</span>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+        <!-- Изображение динозавра src="data:image/png;base64,{{BASE64_IMAGE_DATA}}"  -->
+        <img  id="dino" src="dino.png" alt="Динозавр" class="dino-img">
+    </div>
+    <!-- Блок справа: DINOSFOOD, кнопка клейм, таймер -->
+    <div class="info">
+        <div class="dinosfood-count">98</div>
+        <div class="dinosfood-label">DINOSFOOD</div>
+        <button class="claim-btn"><span class="icon">🍗</span> КЛЕЙМ</button>
+        <div class="timer">02:00</div>
+    </div>
+    <!-- Блок правил -->
+    <div class="rules">
+        <h2>ПРАВИЛА</h2>
+        <!-- Здесь можно поместить текст правил -->
+    </div>
+</div>
+
+
+
+<div id="modal">
+    <div class="modal-header">
+        <span>ДОСТУПНО DINOFOOD</span>
+        <div class="pill">9</div>
+    </div>
+    <div class="modal-body">
+        <div class="arrow down"></div>
+        <div class="large-number">1</div>
+        <div class="arrow up"></div>
+    </div>
+    <button id="claimBtn" class="claim-btn">
+        <span class="chicken-icon">🍗</span> КЛЕЙМ
+    </button>
+</div>
+
+<script>
+    // Таймер (отсчет времени)
+    let timerElement = document.querySelector('.timer');
+    let time = 120; // начальное время (секунды)
+    let interval = setInterval(() => {
+        if (time <= 0) {
+            clearInterval(interval);
+            return;
+        }
+        time--;
+        let minutes = String(Math.floor(time / 60)).padStart(2, '0');
+        let seconds = String(time % 60).padStart(2, '0');
+        timerElement.textContent = minutes + ':' + seconds;
+    }, 1000);
+
+
+
+    // Находим элементы в документе
+    const dinoImage = document.getElementById('dino');
+    const modal = document.getElementById('modal');
+    const claimButton = document.getElementById('claimBtn');
+
+    // При клике на изображение динозавра открываем модальное окно
+    dinoImage.addEventListener('click', function() {
+        modal.style.display = 'block';
+    });
+
+    // При клике на кнопку "КЛЕЙМ" закрываем модальное окно
+    claimButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+</script>
+
+</body>
+</html>
+
+
+<!---<div class="progress-container">
+    <div class="icon"></div>
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>----!>
