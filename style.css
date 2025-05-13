@@ -395,7 +395,7 @@ header .login-btn:hover {
       transform: translate(-50%, -50%); /* Центрируем окно */
       z-index: 2;
       width: calc(30% - 40px);
-      display: inline-block;
+
       padding: 20px;
       background: linear-gradient(to bottom, #009f00 0%, #00d600 100%); /* внешний фон */
       border-radius: 999px;
@@ -446,6 +446,13 @@ header .login-btn:hover {
     border-radius: 30px;
     overflow: hidden;
 
+}
+
+.rules span {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 800;
+    color: #66C500; /* Зеленый цвет заголовка */
 }
 .rules::before {
     content: '';
