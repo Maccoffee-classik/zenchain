@@ -28,7 +28,14 @@
     <div class="user-area">        <!-- ID пользователя -->
 
         <!-- Кнопка "ВОЙТИ" -->
-        <button class="login-btn">+&nbsp;ВОЙТИ</button>
+            <div class="login__button-wrapper">
+            <button class="login-btn">
+              <span class="icon">
+                <img src="plus.png" alt="Иконка">
+              </span>
+                <span class="text">Войти</span>
+            </button>
+        </div>
     </div>
         <div class="side right ">        </div>
 </header>
@@ -37,13 +44,23 @@
     <!-- Центр: уровень, прогресс, динозавр -->
     <div class="center">
         <div class="level-title">УРОВЕНЬ 1</div>
-        <div class="progress">
-            <span class="star">★</span>
-            <div class="progress-bar"><div class="progress-fill"></div></div>
+        <div class="progress-container">
+       <div class="progress-icon">
+           <img src="star.png" alt="star">
+       </div>
+            <div class="progress-bar-wrapper">
+                <div class="progress-fill"></div>
+            </div>
         </div>
         <!-- Изображение динозавра src="data:image/png;base64,{{BASE64_IMAGE_DATA}}"  -->
 
             <img  id="dino" src="dino.png" alt="Динозавр" class="dino-img">
+        <div class="center__button-wrapper">
+            <button class="center__claim-btn">
+
+                <span class="text">КЛЕЙМ</span>
+            </button>
+        </div>
 
 
     </div>
@@ -54,9 +71,7 @@
             <div class="dinosfood-label">DINOSFOOD</div>
             <div class="button-wrapper">
                 <button class="claim-btn">
-              <span class="icon">
-                <img src="drumstick.png" alt="Иконка">
-              </span>
+
                     <span class="text">КЛЕЙМ</span>
                 </button>
             </div>
@@ -78,6 +93,7 @@
 
 
 <div id="modal">
+    <div class="modal-wrapper">
     <div class="modal-header">
         <span>ДОСТУПНО DINOFOOD</span>
         <div class="pill">9</div>
@@ -87,13 +103,12 @@
         <div class="large-number">1</div>
         <div class="arrow up"></div>
     </div>
-    <div class="button-wrapper">
-        <button class="claim-btn">
-              <span class="icon">
-                   <img src="drumstick.png" alt="Иконка">
-              </span>
+    <div id="claimBtn" class="modal__button-wrapper">
+        <button class="modal__claim-btn">
+
             <span class="text">КЛЕЙМ</span>
         </button>
+    </div>
     </div>
 </div>
 
