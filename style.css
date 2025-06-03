@@ -18,7 +18,7 @@ body {
     font-family: "Montserrat", sans-serif;
 
 
-    background: url("bg-desktop.png") no-repeat top center;
+    background: #000 url("bg-desktop.png") no-repeat top center;
     background-size: 100% auto;
 }
 header {
@@ -67,7 +67,7 @@ header {
 
 .logo img {
     height: 60px;
-    display: block;
+    display: none;
 }
 
 /* Логотип ZENchain */
@@ -104,7 +104,7 @@ header .user-id {
     left: 0;
     z-index: 2;
 
-    margin: 0 20px;
+    margin: 0 ;
 
 
 
@@ -181,6 +181,26 @@ header .login-btn:hover {
     text-align: center;
     margin: 0;
 }
+
+.center-logo {
+    flex-shrink: 0;
+    background: white;
+    padding: 0 20px;
+    z-index: 2;
+    background: transparent;
+}
+
+.center-logo img {
+    margin: auto;
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+/* Логотип ZENchain */
+
+
+
 .info-wrapper {
     width: 100%;
 }
@@ -325,7 +345,7 @@ header .login-btn:hover {
     font-family: "BreatheFire";
 }
 .dinosfood-label {
-    font-size: 55px/*1.2em*/;
+    font-size: 5.5vw/*1.2em*/;
 
     font-weight: 700;
     font-family:"BreatheFire";
@@ -344,12 +364,12 @@ header .login-btn:hover {
 .button-wrapper {
 
 
-    position: absolute;
+
     bottom: 0;
     left: 0;
     z-index: 2;
+    margin-top: auto;
 
-    margin-bottom: -89px;
 
     width: calc(100% - 40px);
     display: inline-block;
@@ -447,20 +467,21 @@ header .login-btn:hover {
 /*КНОПКА КЛЕЙМ*/
 
 .timer {
+    margin-top: 10%;
     font-size: 55px/*1.5em*/;
     font-weight: 700;
     color: #fff;
-    padding-top: 94px;
-    padding-bottom: 0px;
+
+    padding-bottom: 20px;
 }
 
 /* Блок правил */
 .rules {
     position: relative;
-    margin-top: -100px;
+
     width: 100%;
     padding: 20px;
-    margin-top: 20px;
+
     border-radius: 30px;
     overflow: hidden;
     background: linear-gradient(to bottom, #d8e00b, #009847);
@@ -482,7 +503,7 @@ header .login-btn:hover {
     text-decoration: none;
     font-size: 13px;
     font-weight: 400;
-    color: #000; /* Зеленый цвет заголовка */
+    color: #fff; /* Зеленый цвет заголовка */
 }
 
 
@@ -536,7 +557,7 @@ header .login-btn:hover {
 
 
     max-width: 40%;
-    background: url("bg-modal.png") no-repeat center center;
+    background: #000;
     background-size: 100% auto;
     top:180px;
     left: calc(50% + 20px);
@@ -556,6 +577,8 @@ header .login-btn:hover {
     padding: 20px;
     border-radius: 30px;
     overflow: hidden;
+    background: url("bg-modal.png") no-repeat center center;
+    background-size: 100% auto;
 }
 
 .modal-wrapper::before {
@@ -612,6 +635,7 @@ header .login-btn:hover {
     margin-bottom: 0px;
 }
 .large-number {
+    font-family: "BreatheFire";
     font-size: 200px;
     font-weight: 900;
     color: #66C500;
@@ -700,6 +724,7 @@ header .login-btn:hover {
 
 /* Адаптив для горизонтального экрана */
 @media (min-width: 1080px) {
+
     .wrapper {
         max-height: calc(100vh - 170px);
 
@@ -713,6 +738,7 @@ header .login-btn:hover {
         margin: 0px;
     }
     .rules {
+        margin-top: -90px;
         order: 0;
         width: 30%;
     }
@@ -736,6 +762,18 @@ header .login-btn:hover {
 }
 /*МОДАЛКА*/
 @media (max-width: 1080px) {
+    body {
+
+        background: #000 url("bg-mobile.png") no-repeat top center;
+        background-size: 100% auto;
+    }
+    .logo img {
+
+        display: block;
+    }
+    .center-logo {
+        display: none;
+    }
     #modal {
         width: 90%;
         padding: 15px;
