@@ -23,7 +23,7 @@ body {
 }
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     background:  background: white;/*var(--grad-primary);*/
     padding: 10px 20px;
@@ -49,6 +49,9 @@ header {
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    margin-right: 20px;
+    width: 10%;
+    margin-left: auto;
 }
 
 .right {
@@ -86,8 +89,11 @@ header .logo .chain {
 header .user-area {
     display: flex;
     align-items: center;
+    margin-left: 10px;
+    width: calc(20% - 30px);
 }
 header .user-id {
+    border: 1px solid #fff;
     background: rgba(255,255,255,0.3);
     padding: 5px 10px;
     border-radius: 5px;
@@ -97,8 +103,10 @@ header .user-id {
     font-size: 27px;
     margin-bottom: auto;
     margin-top: auto;
+    width: 100%
 }
 .login__button-wrapper {
+    width: 100%;
 
     bottom: 0;
     left: 0;
@@ -151,7 +159,7 @@ header .user-id {
 
 .login-btn .text {
     margin: auto;
-    padding: 0 30px;
+    padding: 0 0px;
     color: white;
     position: relative;
     z-index: 1;
@@ -177,9 +185,11 @@ header .login-btn:hover {
 
 /* Блок центра: уровень, прогресс, динозавр */
 .center {
+
     width: 100%;
     text-align: center;
     margin: 0;
+
 }
 
 .center-logo {
@@ -204,92 +214,68 @@ header .login-btn:hover {
 .info-wrapper {
     width: 100%;
 }
+.wrapper-progress {
+    margin-top: -130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .level-title {
+    font-family: "BreatheFire";
     position: relative;
     z-index: 2;
     position: relative;
     display: inline-block;
-    background: linear-gradient(90deg, #abe43a 0%, #3bb78f 100%);
+
     color: white;
     font-size: 38px/*1.5em*/;
     font-weight: bold;
-    padding: 10px 40px;
-    margin-bottom: 20px;
-}
-.level-title::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -26px;
-    border-top: 34px solid transparent;
-    border-bottom: 34px solid transparent;
-    border-right: 27px solid #abe43a;
+    padding: 10px 22px;
+
+    color: #65d503;
 }
 
-.level-title::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -26px;
-    border-top: 34px solid transparent;
-    border-bottom: 34px solid transparent;
-    border-left: 27px solid #3bb78f;
-}
 
 /*ШКАЛА ПРОГРЕССА*/
-.progress-container {
-    z-index: 3;
+.green-bar {
+    width: 300px;
+    height: 30px;
+    background: linear-gradient(to bottom, #25412e, #5b9628);
+    border-radius: 20px;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.progress-icon {
-    z-index: 3;
-    width: 40px;
-    height: 40px;
-    margin-right:  -10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.progress-icon img {
-    width: 70px;
+
 
 }
 
-.progress-bar-wrapper {
-    width: 250px;
-    height: 40px;
-    background: #dcdde1;
-    clip-path: polygon(
-            10px 0%,
-            calc(100% - 20px) 0%,
-            100% 50%,
-            calc(100% - 20px) 100%,
-            10px 100%,
-            0% 50%
-    );
-    overflow: hidden;
+.green-bar-wrapper {
     position: relative;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    padding: 2px;
+    background: linear-gradient(to bottom, #049945, #7dc124); /* Градиентный бордер */
+    border-radius: 30px;
 }
-/*ГДЕ МЕНЯТЬ ПРОГРЕСС*/
-.progress-fill {
-    height: 100%;
-    width: 75%; /* Прогресс можно менять */
-    background: linear-gradient(0deg, #00ffcc, #ffff00);
-    clip-path: polygon(
-            10px 0%,
-            calc(100% - 20px) 0%,
-            100% 50%,
-            calc(100% - 20px) 100%,
-            10px 100%,
-            0% 50%
-    );
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
+
+.center-icon {
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.center-icon img {
+    width: 50px;
+    height: 50px;
+}
+
 
 
 
@@ -387,7 +373,7 @@ header .login-btn:hover {
     border: 2px solid white; /* Внутренняя рамка */
     border-radius: 999px;
     z-index: 1;
-    font-size: 55px;
+    font-size: 2.5vw;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
@@ -415,7 +401,7 @@ header .login-btn:hover {
 
 .claim-btn .text {
     margin: auto;
-    padding: 10px 40px;
+    padding: 0px 0px;
     color: white;
     position: relative;
     z-index: 1;
@@ -511,7 +497,7 @@ header .login-btn:hover {
 .rules span {
     font-family: "BreatheFire";
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 1.8vw;
     font-weight: 800;
     color: #000; /* Зеленый цвет заголовка */
 }
@@ -745,6 +731,7 @@ header .login-btn:hover {
     .center {
         order: 1;
         width: 40%;
+        margin-top: -90px;
     }
     .info-wrapper {
         display: flex;
@@ -762,6 +749,54 @@ header .login-btn:hover {
 }
 /*МОДАЛКА*/
 @media (max-width: 1080px) {
+    .wrapper .rules {
+        order:3
+    }
+    .wrapper .center {
+        order:2
+    }
+    .wrapper .info-wrapper {
+        order:1
+    }
+    .info::before {
+        background: transparent;
+    }
+    header .user-area {
+        width: 30%;
+    }
+
+    .dinosfood-label {
+        order: 1;
+        width: 70%;
+        font-size: 12.5vw;
+        margin-bottom: 0;
+    }
+    .dinosfood-count {
+        order: 2;
+        width: 27%;
+        border: 3px solid #fff;
+        border-radius: 30px;
+        padding: 5px;
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+
+    .button-wrapper {
+        margin-top: -80px;
+        order: 3;
+        width: 65%;
+        margin-right: auto;
+    }
+    .timer {
+        order:4;
+        width: 29%;
+        padding-bottom: 0;
+        margin-top: 0;
+    }
+
+    header {
+        justify-content: space-between;
+    }
     body {
 
         background: #000 url("bg-mobile.png") no-repeat top center;
@@ -781,7 +816,7 @@ header .login-btn:hover {
     .large-number {
         font-size: 48px;
     }
-    .modal-header span, .pill, .claim-btn {
+    .modal-header span, .pill {
         font-size: 16px;
     }
     .dinosfood-label {
@@ -792,5 +827,7 @@ header .login-btn:hover {
     }
     .info {
         margin: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
