@@ -44,13 +44,13 @@ header {
 }
 .center-header{
     display: flex;
-    width: 100%;
+    align-items: center;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     margin-right: 20px;
-    width: 10%;
+    width: 30%;
     margin-left: auto;
 }
 
@@ -90,23 +90,23 @@ header .user-area {
     display: flex;
     align-items: center;
     margin-left: 10px;
-    width: calc(20% - 30px);
+    width: 26%;
 }
 header .user-id {
-    border: 1px solid #fff;
+    display: flex;
+    border: 2px solid #fff;
     background: rgba(255,255,255,0.3);
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 13px;
     margin-left: auto;
     margin-right: 10px;
     color: var(--white);
-    font-size: 27px;
-    margin-bottom: auto;
-    margin-top: auto;
-    width: 100%
+    font-size: 2vw;
+    width: 100%;
+
 }
 .login__button-wrapper {
-    width: 100%;
+    width: 70%;
 
     bottom: 0;
     left: 0;
@@ -131,7 +131,7 @@ header .user-id {
     border: 2px solid white; /* Внутренняя рамка */
     border-radius: 999px;
     z-index: 1;
-    font-size: 27px;
+    font-size: 2vw;
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
@@ -142,8 +142,8 @@ header .user-id {
 .login-btn .icon {
     margin-left: -1px;
     background: white;
-    width: 46px;
-    height: 46px;
+    width: 3vw;
+    height: 3vw;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -153,8 +153,8 @@ header .user-id {
 }
 
 .login-btn  .icon img {
-    width: 30px;
-    height: 30px;
+    width: 1.5vw;
+    height: 1.5vw;
 }
 
 .login-btn .text {
@@ -215,6 +215,7 @@ header .login-btn:hover {
     width: 100%;
 }
 .wrapper-progress {
+    width: 100%;
     margin-top: -130px;
     display: flex;
     justify-content: center;
@@ -228,7 +229,7 @@ header .login-btn:hover {
     display: inline-block;
 
     color: white;
-    font-size: 38px/*1.5em*/;
+    font-size: 3vw/*1.5em*/;
     font-weight: bold;
     padding: 10px 22px;
 
@@ -238,8 +239,8 @@ header .login-btn:hover {
 
 /*ШКАЛА ПРОГРЕССА*/
 .green-bar {
-    width: 300px;
-    height: 30px;
+    width: 100%;
+    height: 1.5vw;
     background: linear-gradient(to bottom, #25412e, #5b9628);
     border-radius: 20px;
     position: relative;
@@ -249,6 +250,7 @@ header .login-btn:hover {
 }
 
 .green-bar-wrapper {
+    width: 50%;
     position: relative;
     display: inline-block;
     padding: 2px;
@@ -272,8 +274,8 @@ header .login-btn:hover {
 }
 
 .center-icon img {
-    width: 50px;
-    height: 50px;
+    width: 3vw;
+    height: 3vw;
 }
 
 
@@ -294,6 +296,7 @@ header .login-btn:hover {
 
 /* Блок с информацией: DINOSFOOD, клейм, таймер */
 .info {
+    background: rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -325,20 +328,20 @@ header .login-btn:hover {
 
 
 .dinosfood-count {
-    font-size: 219px;
+    font-size: 18vw;
     color: #65d503;
     font-weight: bold;
     font-family: "BreatheFire";
 }
 .dinosfood-label {
-    font-size: 5.5vw/*1.2em*/;
+    font-size: 4.8vw/*1.2em*/;
 
     font-weight: 700;
     font-family:"BreatheFire";
 
 
-    margin-bottom: 30px;
-    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-top: auto;
     background: linear-gradient(to bottom, #d8e00b, #009847);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -359,7 +362,7 @@ header .login-btn:hover {
 
     width: calc(100% - 40px);
     display: inline-block;
-    padding: 20px;
+    padding: 0.5vw;
     background: linear-gradient(to right, #3b5820 0%, #63cc07 50%, #3b5820 100%); /* внешний фон */
     border-radius: 999px;
 }
@@ -382,10 +385,10 @@ header .login-btn:hover {
 }
 
 .claim-btn .icon {
-    margin-left: -5px;
+    margin-left: -1px;
     background: white;
-    width: 100px;
-    height: 100px;
+    width: 4.5vw;
+    height: 4.5vw;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -395,8 +398,8 @@ header .login-btn:hover {
 }
 
 .claim-btn .icon img {
-    width: 70px;
-    height: 70px;
+    width: 2.5vw;
+    height: 2.5vw;
 }
 
 .claim-btn .text {
@@ -466,7 +469,7 @@ header .login-btn:hover {
     position: relative;
 
     width: 100%;
-    padding: 20px;
+    padding: 40px 20px;
 
     border-radius: 30px;
     overflow: hidden;
@@ -497,7 +500,7 @@ header .login-btn:hover {
 .rules span {
     font-family: "BreatheFire";
     text-transform: uppercase;
-    font-size: 1.8vw;
+    font-size: 1.6vw;
     font-weight: 800;
     color: #000; /* Зеленый цвет заголовка */
 }
@@ -715,7 +718,7 @@ header .login-btn:hover {
         max-height: calc(100vh - 170px);
 
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: flex-start;
         align-items: stretch;
         flex-wrap: nowrap;
@@ -726,7 +729,7 @@ header .login-btn:hover {
     .rules {
         margin-top: -90px;
         order: 0;
-        width: 30%;
+        width: 26%;
     }
     .center {
         order: 1;
@@ -734,12 +737,12 @@ header .login-btn:hover {
         margin-top: -90px;
     }
     .info-wrapper {
-        background: rgba(255, 255, 255, 0.1);
+
         display: flex;
         flex-direction: column;
         justify-content: stretch;
         order: 2;
-        width: 30%;
+        width: 26%;
         min-height: 100%;
     }
 
@@ -763,7 +766,7 @@ header .login-btn:hover {
         background: transparent;
     }
     header .user-area {
-        width: 30%;
+        width: 60%;
     }
 
     .dinosfood-label {
