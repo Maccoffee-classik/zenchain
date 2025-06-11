@@ -960,9 +960,24 @@ header .login-btn:hover {
         max-width: 90%;
         width: 100%;
     }
+    #modal2 .modal__claim-btn .text2 {
+        font-size: 5vw;
+    }
 
     #modal3 .modal__claim-btn .text2 {
+        font-size: 5vw;
+    }
+    .contributors-table {
         font-size: 3vw;
+    }
+    .social
+
+    {
+        font-size: 3vw;
+    }
+    .title
+    {
+        font-size: 6vw;
     }
 
 }
