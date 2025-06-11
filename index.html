@@ -115,7 +115,7 @@
     <a class="footer__link" href="#" target="_blank">Feedback</a>
     <a class="footer__link" href="#" target="_blank">Faucet</a>
 </div>
-
+<!---
 <div id="modal">
     <div class="modal-wrapper">
     <div class="modal-header">
@@ -138,7 +138,73 @@
     </div>
     </div>
 </div>
+---!>
 
+<div id="modal2">
+    <div class="modal-content">
+        <h2 class="title">Contributors</h2>
+        <div class="contributors-table">
+            <div class="row">
+                <div class="role">Lead App Developer</div>
+                <div class="dash">-</div>
+                <div class="person">
+                    Pavel | Uncharted<br>
+                    <span class="social">X @autoporta</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="role">App Designer</div>
+                <div class="dash">-</div>
+                <div class="person">
+                    Hybrid_Moments<br>
+                    <span class="social">X @Vyacheslav37098</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="role">Product Designer</div>
+                <div class="dash">-</div>
+                <div class="person">
+                    Simon Kr | Anomage<br>
+                    <span class="social">X @krysemen</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="role">Head of Vibes</div>
+                <div class="dash">-</div>
+                <div class="person">
+                    ГРИБ<br>
+                    <span class="social">X @narezzzkin</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="role">Font Breathe Fire III</div>
+                <div class="dash">-</div>
+                <div class="person">Designer Allison James</div>
+            </div>
+        </div>
+        <div id="claimBtn" class="modal__button-wrapper">
+            <button class="modal__claim-btn">
+
+
+                <span class="text2">CLOSE</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!--
+<div id="modal3">
+    <div class="modal-content">
+        <h2 class="modal-title">My wallet</h2>
+        <div class="wallet-address">0x6d85A6c64c1B51b92B7437052EAc38CF15431E63</div>
+        <div id="claimBtn" class="modal__button-wrapper">
+            <button class="modal__claim-btn">
+
+
+                <span class="text2">CLOSE</span>
+            </button>
+        </div>
+    </div>
+</div>--!>
 <script>
     // Таймер (отсчет времени)
     let timerElement = document.querySelector('.timer');
@@ -159,16 +225,30 @@
     // Находим элементы в документе
     const dinoImage = document.getElementById('dino');
     const modal = document.getElementById('modal');
+    const modal2 = document.getElementById('modal2');
+    const modal3 = document.getElementById('modal3');
     const claimButton = document.getElementById('claimBtn');
 
     // При клике на изображение динозавра открываем модальное окно
     dinoImage.addEventListener('click', function() {
         modal.style.display = 'block';
     });
+    dinoImage.addEventListener('click', function() {
+        modal2.style.display = 'block';
+    });
+    dinoImage.addEventListener('click', function() {
+        modal3.style.display = 'block';
+    });
 
     // При клике на кнопку "КЛЕЙМ" закрываем модальное окно
     claimButton.addEventListener('click', function() {
         modal.style.display = 'none';
+    });
+    claimButton.addEventListener('click', function() {
+        modal2.style.display = 'none';
+    });
+    claimButton.addEventListener('click', function() {
+        modal3.style.display = 'none';
     });
 
 </script>
