@@ -178,14 +178,14 @@ header .login-btn:hover {
     display: flex;
 
     align-items: center;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     flex-wrap: wrap;
     flex-direction: unset;
 }
 
 /* Блок центра: уровень, прогресс, динозавр */
 .center {
-
+    position: relative;
     width: 100%;
     text-align: center;
     margin: 0;
@@ -215,6 +215,8 @@ header .login-btn:hover {
     width: 100%;
 }
 .wrapper-progress {
+    position: absolute;
+    bottom: 0;
     width: 100%;
     margin-top: -160px;
     display: flex;
@@ -485,12 +487,12 @@ header .login-btn:hover {
     align-items: center;
     padding-bottom: 10px;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     flex-direction: row;
 }
 .footer__link {
     text-decoration: none;
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 400;
     color: #fff; /* Зеленый цвет заголовка */
 }
@@ -715,7 +717,8 @@ header .login-btn:hover {
 @media (min-width: 1080px) {
 
     .wrapper {
-        max-height: calc(100vh - 170px);
+        height: calc(100vh - 140px);
+        max-height: calc(100vh - 200px);
 
         flex-direction: row;
         justify-content: space-between;
@@ -815,8 +818,15 @@ header .login-btn:hover {
         display: none;
     }
     #modal {
+        left: 0;
+        max-width: 100%;
         width: 90%;
         padding: 15px;
+        transform: none;
+    }
+    .pill {
+        padding: 10px 15px;
+        border-radius: 10px;
     }
     .large-number {
         font-size: 48px;
@@ -880,5 +890,38 @@ header .login-btn:hover {
     }
     .login-btn {
         font-size: 3vw;
+    }
+}
+@media (max-width: 800px) {
+    .wrapper {
+        padding: 10px;
+    }
+    .logo {
+        padding: 0;
+    }
+    .logo img {
+        height: 50px;
+    }
+    .dinosfood-label {
+        width: 66%;
+    }
+    .dinosfood-label {
+        margin-right: auto;
+        margin-bottom: 36px;
+    }
+    .dinosfood-count {
+        width: 25%;
+    }
+    .button-wrapper {
+        padding: 10px;
+        margin-top: -30px;
+
+    }
+    .timer {
+        width: 25%;
+        font-size: 5vw;
+    }
+    .footer__link {
+        font-size: 13px;
     }
 }
