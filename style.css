@@ -216,7 +216,7 @@ header .login-btn:hover {
 }
 .wrapper-progress {
     width: 100%;
-    margin-top: -130px;
+    margin-top: -160px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -786,7 +786,8 @@ header .login-btn:hover {
 
 
     .button-wrapper {
-        margin-top: -80px;
+        padding: 20px;
+        margin-top: -70px;
         order: 3;
         width: 65%;
         margin-right: auto;
@@ -826,12 +827,58 @@ header .login-btn:hover {
     .dinosfood-label {
 
 
-        margin-bottom: 90px;
+        margin-bottom: 80px;
 
     }
     .info {
+        background: transparent;
         margin: 0;
         flex-direction: row;
         flex-wrap: wrap;
+    }
+    .claim-btn .icon {
+        width: 10.5vw;
+        height: 10.5vw;
+    }
+    .claim-btn .icon img
+    {
+        width: 6.5vw;
+        height: 6.5vw;
+    }
+    .claim-btn {
+        font-size: 6.5vw;
+    }
+    .wrapper-progress {
+        justify-content: space-around;
+    }
+    .green-bar-wrapper {
+        width: 70%;
+    }
+    .green-bar {
+        height: 2.5vw;
+    }
+    .center-icon img {
+        width: 5vw;
+        height: 5vw;
+    }
+    .level-title {
+        font-size: 6vw;
+    }
+    .rules span {
+        font-size: 3vw;
+    }
+    header .user-id {
+        font-size: 4vw;
+    }
+    .login-btn .icon {
+        width: 6vw;
+        height: 6vw;
+    }
+    .login-btn .icon img {
+        width: 4vw;
+        height: 4vw;
+    }
+    .login-btn {
+        font-size: 3vw;
     }
 }
