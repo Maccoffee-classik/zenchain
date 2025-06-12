@@ -419,10 +419,10 @@ header .login-btn:hover {
       display: none;
       position: absolute;
       top:50%;
-      left: calc(50% + 20px);
+      left: calc(50% + 0px);
       transform: translate(-50%, -50%); /* Центрируем окно */
       z-index: 2;
-      width: calc(30% - 40px);
+
 
       padding: 20px;
       background: linear-gradient(to right, #3b5820 0%, #63cc07 50%, #3b5820 100%);; /* внешний фон */
@@ -438,7 +438,7 @@ header .login-btn:hover {
       border: 2px solid white; /* Внутренняя рамка */
       border-radius: 999px;
       z-index: 1;
-      font-size: 55px;
+      font-size: 2.5vw;
       font-weight: 700;
       text-transform: uppercase;
       cursor: pointer;
@@ -446,7 +446,7 @@ header .login-btn:hover {
   }
   .center__claim-btn .text {
       margin: auto;
-      padding: 10px 40px;
+      padding: 10px 60px;
       color: white;
       position: relative;
       z-index: 1;
@@ -1150,5 +1150,25 @@ header .login-btn:hover {
     }
     .footer__link {
         font-size: 13px;
+    }
+
+    .center__button-wrapper {
+
+
+        padding: 10px;
+
+    }
+    .center__claim-btn {
+
+        font-size: 5.5vw;
+
+    }
+    .center__claim-btn .text {
+
+        padding: 10px 30px;
+
+    }
+    .contributors-table {
+        gap: 15px;
     }
 }
